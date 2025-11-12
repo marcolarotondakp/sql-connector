@@ -65,7 +65,7 @@ Each section is independent, and you can create a `Database` instance for each.
 
 ### 2.1 Import and create the Database object
 ```python
-from database import Database
+from sqlconnector import Database
 
 # Connect to the "my-beautiful-database" database
 beautiful_db = Database(config_path="db_config.yaml", section="my-beautiful-database")
@@ -124,7 +124,7 @@ db.fetch("SELECT * FROM users WHERE active = :x", params={"x": 1})
 
 ## 💡 4. Complete Example
 ```python
-from database import Database
+from sqlconnector import Database
 
 # Database with SSH
 beautiful_db = Database(config_path="db_config.yaml", section="my-beautiful-database")
