@@ -1,3 +1,3 @@
-from connector import Database
+from .connector import Database
 
 __all__ = ["Database"]
