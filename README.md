@@ -97,20 +97,6 @@ Returns the number of rows actually modified.
 Commit mode is automatic for `modify`.
 For read-only queries (`fetch`), no commit is performed.
 
-### 2.4 Queries without schema
-
-Some queries (e.g., `SHOW DATABASES`, `SHOW TABLES`) do not require a schema.
-You can call `fetch` without passing a schema:
-
-```python
-df = beautiful_db.fetch("SHOW DATABASES;")
-print(df)
-```
-
-If the schema is not configured, SQLAlchemy/MySQL will return a clear error: `No database selected`.
-
-If the schema is present, it will be used automatically.
-
 ## ⚠️ 3. Cautions and best practices
 
 ### Commit
@@ -135,10 +121,6 @@ db.fetch("SELECT * FROM users WHERE active = :x", params={"x": 1})
 ### Return types
 - `fetch()` → `pandas.DataFrame`
 - `modify()` → `int` (modified rows)
-
-### YAML
-If the requested section doesn't exist, the `Database(section)` constructor will raise a `KeyError`.
-The schema is optional, so you can make inspection queries without selecting a database.
 
 ## 💡 4. Complete Example
 ```python
