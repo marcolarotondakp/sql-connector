@@ -1,6 +1,6 @@
 [project]
 name = "sql-connector"
-version = "0.1.0"
+version = "1.0.0"
 description = "Wrapper around SQLAlchemy to connect and execute queries against a MySQL database, supporting optional SSH tunnels and returning query results as pandas DataFrame"
 readme = "README.md"
 requires-python = ">=3.10"
